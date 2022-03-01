@@ -11,9 +11,7 @@ server = app.server
 
 df = pd.read_csv('https://raw.githubusercontent.com/srinathkr07/IPL-Data-Analysis/master/matches.csv')
 
-fig = px.bar(df, x="season", y="winner",
-                 size="population", color="continent", hover_name="country",
-                 log_x=True, size_max=60)
+fig = px.bar(df,x='venue',color='winner',title='Luckiest Venue for Each Team',animation_frame='winner',barmode='relative')
 
 app.layout = html.Div([
     dcc.Graph(
