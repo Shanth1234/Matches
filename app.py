@@ -87,15 +87,7 @@ app.layout=html.Div([html.H1(children='IPL Data Analysis', style={'textAlign': '
   ]),
   html.Div(id='text', style={'textAlign': 'center','color': 'black', 'fontSize': 20})
 ])
-   html.Div([html.H1(children='KKR Anthem'),
-              html.Audio(
-                  src='https://www.downloadmobileringtones.com/mp3ringtone/KKR-Theme-Song-Ipl-2021-Ringtone-Download-dmr.mp3',
-                  controls=True, title='KKR')]),
-    html.Div([html.H1(children='KKR Anthem'),
-              html.Audio(
-                  src='https://www.downloadmobileringtones.com/mp3ringtone/KKR-Theme-Song-Ipl-2021-Ringtone-Download-dmr.mp3',
-                  controls=True, title='KKR')
-              ])
+  
 @app.callback(
     Output('example-graph-1','figure'),
     Output('text','children'),
