@@ -87,6 +87,15 @@ app.layout=html.Div([html.H1(children='IPL Data Analysis', style={'textAlign': '
   ]),
   html.Div(id='text', style={'textAlign': 'center','color': 'black', 'fontSize': 20})
 ])
+   html.Div([html.H1(children='KKR Anthem'),
+              html.Audio(
+                  src='https://www.downloadmobileringtones.com/mp3ringtone/KKR-Theme-Song-Ipl-2021-Ringtone-Download-dmr.mp3',
+                  controls=True, title='KKR')]),
+    html.Div([html.H1(children='KKR Anthem'),
+              html.Audio(
+                  src='https://www.downloadmobileringtones.com/mp3ringtone/KKR-Theme-Song-Ipl-2021-Ringtone-Download-dmr.mp3',
+                  controls=True, title='KKR')
+              ])
 @app.callback(
     Output('example-graph-1','figure'),
     Output('text','children'),
@@ -114,6 +123,7 @@ def update_graph(value):
   elif value== 'Winning probability by Winning Toss':
     data='The probability of winning the game after winning toss is above 45% for almost all the teams'
     return sun,data
+  
 
 if __name__ == '__main__':
    app.run_server(debug=True)
