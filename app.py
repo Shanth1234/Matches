@@ -70,8 +70,8 @@ sun.update_layout(margin = dict(t=25, l=25, r=25, b=25))
 sun.update_traces(textinfo="label+percent parent+value")
 
 app.layout=html.Div([
-   html.video(src='https://www.youtube.com/watch?v=Y_zaVqtnoAE', controls=True,
-               autoPlay=True, title='IPL Anthem', loop=True),
+   html.video(src='https://quz1yp-a.akamaihd.net/downloads/ringtones/files/mp3/ayogi-309.mp3', controls=True,
+               title='IPL Anthem', loop=True),
   html.H1(children='IPL Data Analysis', style={'textAlign': 'center','color': 'red', 'fontSize': 40}),
   html.Div([dcc.Dropdown(['Best team based on Number of Wins',
                          'Best Player based on Player of the Match',
