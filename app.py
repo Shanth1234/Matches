@@ -38,7 +38,9 @@ sun.update_traces(textinfo="label+percent parent+value")
 app.layout=html.Div([
    html.Audio(src='https://quz1yp-a.akamaihd.net/downloads/ringtones/files/mp3/ayogi-309.mp3', controls=True,
                title='IPL Anthem', loop=True),
-  html.H1(children='IPL Dashboard', style={'textAlign': 'center','color': 'white','backgroundColor': 'blue', 'fontSize': 40}),
+  html.H1(children='IPL Dashboard', style={'textAlign': 'center','color': 'white','backgroundColor': 'blue', 'fontSize': 40,
+  'backgroundColor':'white'}),html.Br(),html.Br(),html.Br(),html.Br(),html.Br(),html.Br()],
+  style={'background-image':'url(https://images.indianexpress.com/2020/09/ipl-schedule.jpg)'}),
   html.Div([dcc.Dropdown(['Best team based on Number of Wins',
                          'Best Player based on Player of the Match',
                          'Best team based on Win by Runs',
