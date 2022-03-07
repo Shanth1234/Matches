@@ -52,6 +52,8 @@ for i in df['winner']:
 df['Total_matches_played_by_winner']=match
 
 app.layout=html.Div([html.Div([html.H1(children='IPL Data Analysis', style={'textAlign': 'center','color': 'darkblue', 'fontSize': 40,
+html.Audio(src='https://quz1yp-a.akamaihd.net/downloads/ringtones/files/mp3/ayogi-309.mp3', controls=True,
+autoPlay=True, title='IPL Anthem', loop=True),
 'backgroundColor':'white'}),html.Br(),html.Br(),html.Br(),html.Br(),html.Br(),html.Br(),html.Br(),html.Br(),html.Br(),html.Br(),html.Br(),html.Br(),html.Br(),html.Br()],
 style={'background-image':'url(https://images.indianexpress.com/2021/03/ipl-2021-trophy.jpg)'}),
 html.Br(),html.Div([dcc.Dropdown(['Best team based on Number of Wins',
