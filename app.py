@@ -11,42 +11,8 @@ app=dash.Dash(__name__)
 auth= dash_auth.BasicAuth(app,USERNAME_PASSWORD_PAIRS)
 server=app.server
 df = pd.read_csv('https://raw.githubusercontent.com/srinathkr07/IPL-Data-Analysis/master/matches.csv')
-df=df.drop(columns='id')
-df=df.fillna(0)
-mappings={'Rising Pune Supergiant':'Rising Pune Supergiants','Delhi Capitals':'Delhi Daredevils'}
-df['team1']=df['team1'].replace(mappings)
-df['team2']=df['team2'].replace(mappings)
-df['winner']=df['winner'].replace(mappings)
-df['toss_winner']=df['toss_winner'].replace(mappings)
-loser=[]
-for i in range(756):
-  if (df.iloc[i,3])!=(df.iloc[i,9]):
-    loser.append(df.iloc[i,3])
-  elif (df.iloc[i,9])==0:
-    loser.append(0)
-  else:
-    loser.append(df.iloc[i,4])
-df['Loser']=loser
-total={}
-count=0
-for i in df['team1'].unique():
-  for m in range(756):
-    if i==df.iloc[m,3]:
-      count+=1
-    else:
-      if i==df.iloc[m,4]:
-        count+=1
-  total[i]=count
-  count=0
-  match=[]
-for i in df['winner']:
-  for j,k in total.items():
-    if i==j:
-      match.append(k)
-    elif i==0:
-      match.append(0)
-      break
-df['Total_matches_played_by_winner']=match
+df.drop(['id', 'date', 'umpire3'], axis=1, inplace=True)
+df.dropna(inplace=True)
 
 pie=px.pie(data_frame=df,names='winner',title='Best team based on Number of Wins',hole=0.2,hover_data=['Total_matches_played_by_winner'])
 pie.update_traces(textinfo="label+value",textposition='inside')
@@ -72,7 +38,7 @@ sun.update_traces(textinfo="label+percent parent+value")
 app.layout=html.Div([
    html.Audio(src='https://quz1yp-a.akamaihd.net/downloads/ringtones/files/mp3/ayogi-309.mp3', controls=True,
                title='IPL Anthem', loop=True),
-  html.H1(children='IPL Data Analysis', style={'textAlign': 'center','color': 'red', 'fontSize': 40}),
+  html.H1(children='IPL Dashboard', style={'textAlign': 'center','color': 'white','backgroundColor': 'blue', 'fontSize': 40}),
   html.Div([dcc.Dropdown(['Best team based on Number of Wins',
                          'Best Player based on Player of the Match',
                          'Best team based on Win by Runs',
