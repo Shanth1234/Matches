@@ -40,7 +40,7 @@ app.layout=html.Div([
                title='IPL Anthem', loop=True),
   html.H1(children='IPL Dashboard', style={'textAlign': 'center','color': 'white','backgroundColor': 'blue', 'fontSize': 40,
   'backgroundColor':'white'}),html.Br(),html.Br(),html.Br(),html.Br(),html.Br(),html.Br()],
-  style={'background-image':'url(https://images.indianexpress.com/2020/09/ipl-schedule.jpg)'}),
+style={'background-image':'url(https://images.indianexpress.com/2020/09/ipl-schedule.jpg)'}),
   html.Div([dcc.Dropdown(['Best team based on Number of Wins',
                          'Best Player based on Player of the Match',
                          'Best team based on Win by Runs',
