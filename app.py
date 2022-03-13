@@ -77,7 +77,7 @@ html.Br(),html.Div([dcc.Dropdown(['Best team based on Number of Wins',
 ])
 @app.callback(
     Output('example-graph-1','figure'),
-    [Input('based-on','value')],[Input('year','value')])
+    [Input('based-on','value')],[Input('year','value')],style={"color": "crimson", 'backgroundColor': 'green'})
 def update_graph(bvalue,yvalue):
   if bvalue== 'Best team based on Number of Wins':
     if yvalue=='All Seasons':
