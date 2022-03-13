@@ -61,8 +61,9 @@ html.Br(),html.Div([dcc.Dropdown(['Best team based on Number of Wins',
                          'Luckiest Venue for Each Team',
                          'Winning probability by Winning Toss'],'Best team based on Number of Wins',id='based-on',clearable=False,searchable=False,
                             style = dict(
-                            width = '45%'                           
-                            ))
+                            width = '45%'
+                            style={"color": "crimson", 'backgroundColor': 'black'}
+                            )) 
   ]),html.Br(),
   html.Div([dcc.Dropdown(['All Seasons',2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,
                          2018,
